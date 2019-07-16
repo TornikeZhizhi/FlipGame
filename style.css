@@ -1,6 +1,28 @@
 
 body {
 background-color: antiquewhite;
+
+animation: bodyanime 4s linear infinite;
+}
+
+
+
+@keyframes bodyanime {
+
+	0% {
+		background-color: antiquewhite;
+	}
+
+
+	50% {
+		background-color: #f9cc8fc7;
+	}
+
+
+	100% {
+
+		background-color: antiquewhite;
+	}
 }
 
 .div {

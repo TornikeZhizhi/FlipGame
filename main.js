@@ -1,97 +1,11 @@
 
-// var input = $("#dateArea-StatementClients__Referrer__");
-// var dash = "-"
-// input.on("keydown",function(event){
-
-// 	var inputLength = $("#dateArea-StatementClients__Referrer__").val().length
-// 	var thisValue = $(this).val()
-// 	var coma = event.which
-// 	console.log(coma)
-
-// 	if (coma == 37 || coma == 39) {
-		
-// 	}else {
-
-// 	if (inputLength == 10 && coma !== 8) {
-// 		event.preventDefault()
-// 	}else {
-
-// 			if (coma == 190) {
-// 			event.preventDefault()
-// 			}
-// 			if (coma == 189) {
-// 				event.preventDefault()
-// 			}
-// 			if (coma == 8) {
-				
-// 			}else {
-
-// 				  var theEvent = event || window.event;
-
-			
-// 				  if (theEvent.type === 'paste') {
-// 				      key = event.clipboardData.getData('text/plain');
-// 				  } else {
-			
-// 				      var key = theEvent.keyCode || theEvent.which;
-// 				      key = String.fromCharCode(key);
-// 				  }
-// 				  var regex = /[0-9]|\./;
-// 				  if( !regex.test(key) ) {
-// 				    theEvent.returnValue = false;
-// 				    if(theEvent.preventDefault) theEvent.preventDefault();
-// 				  }
-
-
-// 				if (inputLength == 2) {
-// 					input.val(thisValue + dash)
-// 				}
-// 				if (inputLength == 5) {
-// 					input.val(thisValue + dash)
-
-// 				}
-// 			}
-// 	}
-// 	}
-
-
-// })
-
-
-
-// var fr = [23,31,11,311,4]
-// var number = []
-
-// var map = fr.map(function(element,index){
-
-// 	// console.log(index)
-
-// 	if (element > 20){
-
-// 		number.push(element * 424)
-// 	} 
-
-
-// })
-
-
-// console.log(number)
-
-// var fruits = ["Banana", "Orange", "Apple", "Mango"];
- 
-
-//  fruits.forEach(function(das,dax){
-
-//  	console.log(das + " " + dax)
-
-//  })
-
-
-
 
 
 var box = document.getElementsByClassName("box");
 var boxImg = document.querySelectorAll(".box img")
+var score  = document.getElementById("score")
+var popup  = document.getElementById("popup_window")
+
 
 for (var i = 0; i < box.length; i++) {
 	box[i].setAttribute("data-id",i)
@@ -106,6 +20,11 @@ function removeFlip(){
 var x = 0;
 var srcArray = []
 var indexArray = []
+var scorePoint = 0;
+
+var cardQuantity = box.length / 2
+var quantityChecker = 1;
+
 
 for (var i = 0; i < box.length; i++) {
 
@@ -122,17 +41,29 @@ for (var i = 0; i < box.length; i++) {
 
 		var index = indexArray[srcArray.length-1]
 		var index2 = indexArray[srcArray.length-2]
-		
+			
+			
 			if (x == 0) {
 
 				boxImg[boxIndex].classList.add("active");
 
 				x=1;
 			}else if (x == 1) {
-				boxImg[boxIndex].classList.add("active");
 
+				
+					
+
+					boxImg[boxIndex].classList.add("active");
 					setTimeout(function(){
 					  if (srcIndex == srcIndex2) {
+					  	scorePoint = scorePoint + 10;
+					  
+
+					  	if (cardQuantity == quantityChecker) {
+					  		
+					  	}
+					  	quantityChecker++;
+					  	score.innerHTML = scorePoint;
 
 					  	box[indexArray[indexArray.length-1]].classList.add("winner");
 					  	box[indexArray[indexArray.length-2]].classList.add("winner");
@@ -146,8 +77,6 @@ for (var i = 0; i < box.length; i++) {
 					  }
 
 					},100)
-
-				
 
 				x=0;
 			}

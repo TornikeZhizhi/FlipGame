@@ -3,119 +3,13 @@
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Flip Card Game</title>
 
-	<style type="text/css">
-
-		body {
-			background-color: antiquewhite;
-		}
-		
-		.div {
-
-			margin: 20px;
-			width: 100px;
-			height: 100px;
-			background-color: red;
-			cursor: pointer;
-		}
-
-		.box {
-			margin: 20px;
-			width: 100px;
-			height: 160px;
-			background-color: orange;
-			border-radius: 5%;
-			transition: all .4s;
-			flex: 0 0 20%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-		}
-
-		.box.winner {
-			background-color: gray;
-		}
-
-		.box img {
-			width: 75%;
-			visibility: hidden;
-			transition: all .4s;
-			opacity: 0;
-			
-		}
-
-		.box img.active {
-			visibility: visible;
-			opacity: 1;
-			transform: scale(1.1);
-		}
-
-		.box img.winner {
-			visibility: visible;
-			opacity: 1;
-			pointer-events: none;
-			opacity: .5;
-			animation: anime 1s linear;
-			pointer-events: none;
-		}
-
-
-
-		.flipp_container {
-			max-width: 1000px;
-			margin: 0 auto;
-		}
-
-		.score_container {
-			max-width: 600px;
-			margin: 0 auto;
-		}
-
-		.tittle_container {
-			text-align: center;
-		}
-
-
-		.tittle_container h1 {
-
-		text-transform: capitalize;
-	    font-size: 48px;
- 		 margin-top: 0;
- 		 font-family: 'Abril Fatface', cursive;
-		}
-
-		.score_container {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.score_container span {
-		    text-transform: capitalize;
-    font-size: 25px;
-    padding-right: 15px;
-    color: black;
-    font-weight: bold;
-font-family: 'Caveat', cursive;
-
-		}
-
-	</style>
 </head>
 <body>
 
-<!-- oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)" maxlength="10" -->
 
-<!-- <input  id="dateArea-StatementClients__Referrer__" class="validate datepicker hasDatepicker valid" type="text" name="">
- -->
-
-
-<!-- <div style="display: flex;">
-	<div class="div"></div>
-	<div class="div"></div>
-	<div class="div"></div>
-</div> -->
 
 <div class="tittle_container">
 	<h1>welcome to card flip game</h1>
@@ -174,6 +68,22 @@ font-family: 'Caveat', cursive;
 
 </div>
 
+<div id="popup_window">
+
+	<div class="popup_content">
+
+		<div class="popup_text">
+			<h2>"Congratulations, You Won!"</h2>
+		</div>
+		<div class="question">
+			<span>fuck this game</span>
+			<span>play again?</span>
+		</div>
+	</div>
+
+
+</div>
+
 
 
 <script
@@ -181,8 +91,6 @@ font-family: 'Caveat', cursive;
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 
-
-<script src="datepickerz.js"></script>
 
 <script src="main.js"></script>
 

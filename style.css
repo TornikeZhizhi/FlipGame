@@ -1,0 +1,146 @@
+
+body {
+background-color: antiquewhite;
+}
+
+.div {
+
+margin: 20px;
+width: 100px;
+height: 100px;
+background-color: red;
+cursor: pointer;
+}
+
+.box {
+margin: 20px;
+width: 100px;
+height: 160px;
+background-color: orange;
+border-radius: 5%;
+transition: all .4s;
+flex: 0 0 20%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+
+.box.winner {
+background-color: gray;
+}
+
+.box img {
+width: 75%;
+visibility: hidden;
+transition: all .4s;
+opacity: 0;
+
+}
+
+.box img.active {
+visibility: visible;
+opacity: 1;
+transform: scale(1.1);
+}
+
+.box img.winner {
+visibility: visible;
+opacity: 1;
+pointer-events: none;
+opacity: .5;
+animation: anime 1s linear;
+pointer-events: none;
+}
+
+
+
+.flipp_container {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.score_container {
+max-width: 600px;
+margin: 0 auto;
+}
+
+.tittle_container {
+text-align: center;
+}
+
+#popup_window{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	background-color: #4caf50b0;
+	display: none;
+}
+
+.question {
+	display: flex;
+	justify-content: space-between;
+}
+
+.question span {
+
+	display: inline-block;
+    padding: 20px;
+     font-family: 'Abril Fatface', cursive;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+        border-radius: 5px;
+
+
+}	
+.popup_content{
+	margin: 10% auto 0;
+    max-width: 600px;
+    text-align: center;
+    background: sandybrown;
+    padding: 10px 35px 10px;
+    border-radius: 65px 8px 35px 7px;
+}
+.question span:first-child{
+	background-color: red;
+}
+.question span:last-child{
+	background-color: green;
+}
+
+
+.popup_text h2 {
+	    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+   
+.tittle_container h1 {
+
+text-transform: capitalize;
+font-size: 48px;
+ margin-top: 0;
+ font-family: 'Abril Fatface', cursive;
+}
+
+.score_container {
+display: flex;
+justify-content: space-between;
+}
+
+.score_container span {
+text-transform: capitalize;
+font-size: 25px;
+padding-right: 15px;
+color: black;
+font-weight: bold;
+font-family: 'Caveat', cursive;
+
+}
+

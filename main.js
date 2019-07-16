@@ -50,11 +50,14 @@ for (var i = 0; i < box.length; i++) {
 				x=1;
 			}else if (x == 1) {
 
-				
-					
 
 					boxImg[boxIndex].classList.add("active");
 					setTimeout(function(){
+
+
+						if (index !== index2) {
+
+
 					  if (srcIndex == srcIndex2) {
 					  	scorePoint = scorePoint + 10;
 					  
@@ -71,10 +74,15 @@ for (var i = 0; i < box.length; i++) {
 						boxImg[indexArray[indexArray.length-1]].classList.add("winner");
 						boxImg[indexArray[indexArray.length-2]].classList.add("winner");
 				
-					  }else {
+						  }else {
 
-					  	removeFlip()
-					  }
+						  	removeFlip()
+						  }
+
+						}	else {
+							console.log(x)
+							x=1;
+						}
 
 					},100)
 

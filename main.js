@@ -93,3 +93,29 @@ for (var i = 0; i < box.length; i++) {
 		
 	})
 }
+
+var timer = document.getElementById('time')
+var minute = document.getElementById('minute')
+
+var time = 0;
+var n = 0;
+var lastTime = 0;
+
+
+var interval = setInterval(function(){
+		if (time == 60) {
+			minute.classList.add('show')
+			minute.innerHTML = n;
+			n++;
+			time = 1;
+		}
+		timer.innerHTML = time
+		time ++;
+		lastTime++;
+		console.log(lastTime)
+
+	},1000)
+
+
+
+

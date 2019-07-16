@@ -30,6 +30,8 @@ cursor: pointer;
 background-color: gray;
 }
 
+
+
 .box img {
 width: 75%;
 visibility: hidden;
@@ -51,6 +53,7 @@ pointer-events: none;
 opacity: .5;
 animation: anime 1s linear;
 pointer-events: none;
+    filter: invert(92%);
 }
 
 
@@ -78,6 +81,14 @@ text-align: center;
 	z-index: 1000;
 	background-color: #4caf50b0;
 	display: none;
+}
+
+#minute {
+	padding-right: 0;
+}
+
+#minute.show {
+	display: inline;
 }
 
 .question {

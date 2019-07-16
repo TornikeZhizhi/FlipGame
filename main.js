@@ -84,7 +84,7 @@ for (var i = 0; i < box.length; i++) {
 							x=1;
 						}
 
-					},100)
+					},300)
 
 				x=0;
 			}
@@ -112,10 +112,8 @@ var interval = setInterval(function(){
 		timer.innerHTML = time
 		time ++;
 		lastTime++;
-		console.log(lastTime)
+	
 
 	},1000)
-
-
 
 

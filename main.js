@@ -9,6 +9,7 @@ var popup  = document.getElementById("popup_window")
 
 for (var i = 0; i < box.length; i++) {
 	box[i].setAttribute("data-id",i)
+	boxImg[i].setAttribute("data-id",i)
 }
 
 function removeFlip(){
@@ -115,5 +116,44 @@ var interval = setInterval(function(){
 	
 
 	},1000)
+
+
+
+
+// Hint 
+
+var hintArray = [
+
+	[0,11],
+	[1,17],
+	[2,13],
+	[3,19],
+	[4,16],
+	[5,12],
+	[6,10],
+	[7,15],
+	[8,14],
+	[9,18]
+]
+
+
+
+setInterval(function(){
+
+var random = Math.floor(Math.random() * box.length /2)
+		
+	box[hintArray[random][0]].classList.add("hint");	
+	box[hintArray[random][1]].classList.add("hint");	
+
+	setTimeout(function(){
+
+		for (var i = 0; i < box.length; i++) {
+			box[i].classList.remove("hint")
+		}
+	},500)
+	
+
+},10000)
+
 
 

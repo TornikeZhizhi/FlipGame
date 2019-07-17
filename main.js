@@ -91,6 +91,7 @@ for (var i = 0; i < box.length; i++) {
 					  
 
 					  	if (cardQuantity == quantityChecker) {
+					  		audio3.play()
 					  		popup.classList.add("show")
 					  		lastscore.innerHTML = Math.floor(scorePoint/lastTime * 57)
 
@@ -98,17 +99,15 @@ for (var i = 0; i < box.length; i++) {
 					  		lastscore.innerHTML = liveScore
 					  		if (liveScore > bestscorePoint) {
 
+
 					  			bestscorePoint = liveScore 
 					  			bestScore.innerHTML = bestscorePoint
 					  		}
-
-
-
-
 					  	}
+
 					  	quantityChecker++;
 					  	score.innerHTML = scorePoint;
-
+					  	audio.play();
 					  	box[indexArray[indexArray.length-1]].classList.add("winner");
 					  	box[indexArray[indexArray.length-2]].classList.add("winner");
 
@@ -116,7 +115,7 @@ for (var i = 0; i < box.length; i++) {
 						boxImg[indexArray[indexArray.length-2]].classList.add("winner");
 				
 						  }else {
-
+						  	audio2.play()
 						  	removeFlip()
 						  }
 
@@ -202,6 +201,9 @@ var random = Math.floor(Math.random() * box.length /2)
 
 again.addEventListener("click",function(){
 
+
+	audio3.pause()
+	audio3.currentTime = 0;
 	popup.classList.remove("show")
 
 	time=0;
@@ -236,5 +238,10 @@ bad_answer.addEventListener("click",function(){
 
 
 
+
+
+var audio = new Audio( "music/wins.mp3" );
+var audio2 = new Audio( "music/fail.mp3");
+var audio3 = new Audio( "music/Congratulations.mp3");
 
 

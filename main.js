@@ -201,13 +201,14 @@ var random = Math.floor(Math.random() * box.length /2)
 
 again.addEventListener("click",function(){
 
-
+		time=0;
+		lastTime=0;
+		
 	audio3.pause()
 	audio3.currentTime = 0;
 	popup.classList.remove("show")
 
-	time=0;
-		lastTime=0;
+		
 		scorePoint =0;
 		score.innerHTML =0;
 		

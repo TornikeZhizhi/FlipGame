@@ -4,6 +4,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Flip Card Game</title>
 
 </head>
@@ -16,7 +17,7 @@
 </div>
 <div class="score_container">
 
-<div><span>score</span><span id="score">0</span></div>
+<div><span>found score</span><span id="score">0</span></div>
 <div><span>best score</span> <span id="best_score">0</span></div>
 <!-- <div><span>found card</span>0</div>
 <div><span>seen cards</span>0</div> -->
@@ -62,8 +63,8 @@
 	</div>
 	<div class="box">
 			<img src="img/leo.svg">
-	</div>
-	<div class="box">
+	</div> 
+	 <div class="box">
 			<img src="img/virgo.svg">
 	</div>
 	<div class="box">
@@ -80,7 +81,7 @@
 	</div>
 	<div class="box">
 		<img src="img/sigittarius.svg">
-	</div>
+	</div> 
 	<div class="box">
 		<img src="img/taurus.svg">
 	</div>
@@ -99,9 +100,13 @@
 		<div class="popup_text">
 			<h2>"Congratulations, You Won!"</h2>
 		</div>
+		<div class="last_score">
+
+			<span>your score is</span><span id="lastscore">0</span>
+		</div>
 		<div class="question">
 			<span>fuck this game</span>
-			<span>play again?</span>
+			<span id="play_again">play again?</span>
 		</div>
 	</div>
 

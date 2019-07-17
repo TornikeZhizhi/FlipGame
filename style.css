@@ -52,7 +52,7 @@ cursor: pointer;
 
 
 .box.winner {
-background-color: gray;
+background-color: gray !important;
 cursor: no-drop;
 animation: unset !important;
 }
@@ -85,7 +85,10 @@ pointer-events: none;
 
 
 
-.flipp_container {max-width: 1200px;margin: 21px auto;justify-content: space-between;}
+.flipp_container {max-width: 1200px;margin: 21px auto;justify-content: space-between;
+
+width: 95%;
+}
 
 .score_container {
 max-width: 600px;
@@ -106,7 +109,9 @@ text-align: center;
 	background-color: #4caf50b0;
 	display: none;
 }
-
+#popup_window.show {
+	display: block;
+}
 #minute {
 	padding-right: 0;
 }
@@ -173,10 +178,23 @@ justify-content: space-between;
 text-transform: capitalize;
 font-size: 25px;
 padding-right: 15px;
-color: black;
+color: #fff;
 font-weight: bold;
 font-family: 'Caveat', cursive;
 
+}
+
+.last_score {
+	text-align: center;
+    margin: 40px 0;
+    font-size: 42px;
+    font-weight: bolder;
+    font-family: 'Caveat', cursive;
+}
+
+#lastscore {
+	padding-left: 20px;
+	 color: green;
 }
 
 .box {
@@ -208,6 +226,13 @@ font-family: 'Caveat', cursive;
 
   animation: shake 0.4s; 
   animation-iteration-count: 1; 
+  background-color: #ffb834;
+}
+.score_container div {
+	background: black;
+    color: #fff;
+    border-radius: 10px;
+    padding: 4px 12px 7px;
 }
 
 @keyframes shake {
@@ -223,6 +248,40 @@ font-family: 'Caveat', cursive;
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+
+
+@media only screen and (max-width: 1576px) {
+ .box {
+ 	height: 110px;
+ }
+ .flipp_container {
+    max-width: 960px;
+}
+}
+
+@media only screen and (max-width: 1376px) {
+
+.box {
+    height: 85px;
+}
+
+ .flipp_container {
+    max-width: 775px;
+}
+.tittle_container h1 {
+
+    font-size: 44px;
+    margin-bottom: 17px;
+   
+}
+
+.score_container span {
+	font-size: 21px;
+}
+
+}
+
 
 
 .tour {
@@ -256,3 +315,6 @@ font-family: 'Caveat', cursive;
     transform: rotateY(-180deg); }
   .tour:hover .tour_back {
     transform: rotateY(0deg); }
+
+
+

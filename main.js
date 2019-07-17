@@ -5,7 +5,13 @@ var box = document.getElementsByClassName("box");
 var boxImg = document.querySelectorAll(".box img")
 var score  = document.getElementById("score")
 var popup  = document.getElementById("popup_window")
+var lastscore  = document.getElementById("lastscore")
+var again  = document.getElementById("play_again")
 
+//
+var bestScore  = document.getElementById("best_score")
+var bestscorePoint= 0;
+var liveScore = 0;
 
 for (var i = 0; i < box.length; i++) {
 	box[i].setAttribute("data-id",i)
@@ -60,11 +66,21 @@ for (var i = 0; i < box.length; i++) {
 
 
 					  if (srcIndex == srcIndex2) {
-					  	scorePoint = scorePoint + 10;
+					  	scorePoint = scorePoint + 1;
 					  
 
 					  	if (cardQuantity == quantityChecker) {
-					  		
+					  		popup.classList.add("show")
+					  		lastscore.innerHTML = Math.floor(scorePoint/lastTime * 57)
+
+					  		liveScore = Math.floor(scorePoint/lastTime * 57)
+
+					  		if (liveScore > bestscorePoint) {
+
+					  			bestscorePoint = liveScore 
+					  			bestScore.innerHTML = bestscorePoint
+					  		}
+
 					  	}
 					  	quantityChecker++;
 					  	score.innerHTML = scorePoint;
@@ -99,15 +115,15 @@ var timer = document.getElementById('time')
 var minute = document.getElementById('minute')
 
 var time = 0;
-var n = 0;
+var changeTime = 0;
 var lastTime = 0;
 
 
 var interval = setInterval(function(){
 		if (time == 60) {
 			minute.classList.add('show')
-			minute.innerHTML = n;
-			n++;
+			minute.innerHTML = changeTime;
+			changeTime++;
 			time = 1;
 		}
 		timer.innerHTML = time
@@ -154,6 +170,37 @@ var random = Math.floor(Math.random() * box.length /2)
 	
 
 },10000)
+
+
+
+
+
+
+again.addEventListener("click",function(){
+
+	popup.classList.remove("show")
+
+	time=0;
+		lastTime=0;
+		scorePoint =0;
+		score.innerHTML =0;
+		
+		quantityChecker =1;
+
+		x = 0;
+		srcArray = []
+		indexArray = []
+		scorePoint = 0;
+
+	for (var i = 0; i < box.length; i++) {
+		boxImg[i].classList.remove("winner");
+		box[i].classList.remove("winner");
+		boxImg[i].classList.remove("active");
+		
+
+	}
+
+})
 
 
 

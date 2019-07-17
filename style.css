@@ -294,6 +294,34 @@ font-family: 'Caveat', cursive;
 
 }
 
+@media only screen and (max-width: 992px) {
+
+.tittle_container h1{
+    font-size: 23px;
+    margin-bottom: 17px;
+    padding: 0 45px;
+	
+}
+
+
+    .score_container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.score_container div {
+ 
+    margin-bottom: 4px;
+}
+
+.box {
+    height: 60px;
+}
+	
+}
+
+
 
 
 .tour {

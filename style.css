@@ -110,7 +110,7 @@ text-align: center;
   width: 100%;
   height: 100vh;
   z-index: 1000;
-  background-color: #4caf50b0;
+  background-color: #ff5722b0;;
    display: none;
 }
 #popup_window.show {
@@ -219,6 +219,9 @@ font-family: 'Caveat', cursive;
 }
 
 
+@media only screen and (min-width: 992px) {
+
+
 @-webkit-keyframes spaceboots {
   0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
   10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
@@ -231,6 +234,8 @@ font-family: 'Caveat', cursive;
   80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
   90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
   100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 }
 
 
@@ -318,7 +323,37 @@ font-family: 'Caveat', cursive;
 .box {
     height: 60px;
 }
+.question span {
+    padding: 16px;
+    font-size: 13px;
+    width: 108px;
+    margin-right: 10px;
+}
+.question span{
+	padding: 5px;
+}
 	
+	.popup_text h2 {
+		font-size: 30px;
+	}
+	.last_score {
+  
+    margin: 6px 0;
+    font-size: 32px;
+
+}
+
+
+.popup_content {
+    width: 90%;
+    padding: 10px 14px 10px;
+    border-radius: 38px 8px 35px 7px;
+}
+.popup_text h2 {
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
 }
 
 

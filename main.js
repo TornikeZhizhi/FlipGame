@@ -2,11 +2,18 @@
 
 
 var box = document.getElementsByClassName("box");
+
+var tour_back = document.getElementsByClassName("tour_back");
+var tour_front = document.getElementsByClassName("tour_front");
+
 var boxImg = document.querySelectorAll(".box img")
 var score  = document.getElementById("score")
 var popup  = document.getElementById("popup_window")
 var lastscore  = document.getElementById("lastscore")
 var again  = document.getElementById("play_again")
+
+
+
 
 //
 var bestScore  = document.getElementById("best_score")
@@ -37,6 +44,9 @@ function removePoint(){
 function removeFlip(){
 	for (var z = 0; z < box.length; z++) {
 		boxImg[z].classList.remove("active");
+
+		tour_back[z].classList.remove("rotate");
+		tour_front[z].classList.remove("rotate");
 		
 	}
 }
@@ -55,14 +65,15 @@ for (var i = 0; i < box.length; i++) {
 	box[i].addEventListener("click",function(){
 
 		var boxIndex = Number(this.getAttribute("data-id"))
-		var imgSource = box[boxIndex].children[0].getAttribute("src");
-
+		var imgSource = tour_back[boxIndex].children[0].getAttribute("src");
+		console.log(boxIndex)
 		srcArray.push(imgSource)
 		indexArray.push(boxIndex)
 
 		var srcIndex = srcArray[srcArray.length-1]
 		var srcIndex2 = srcArray[srcArray.length-2]
 
+				
 		var index = indexArray[srcArray.length-1]
 		var index2 = indexArray[srcArray.length-2]
 			
@@ -71,11 +82,18 @@ for (var i = 0; i < box.length; i++) {
 
 				boxImg[boxIndex].classList.add("active");
 
+				tour_back[boxIndex].classList.add("rotate");
+				tour_front[boxIndex].classList.add("rotate");
+
+
 				x=1;
 			}else if (x == 1) {
 
 					addPoint()
 					boxImg[boxIndex].classList.add("active");
+
+					tour_back[boxIndex].classList.add("rotate");
+					tour_front[boxIndex].classList.add("rotate");
 					setTimeout(function(){
 
 						setTimeout(function(){
@@ -84,7 +102,6 @@ for (var i = 0; i < box.length; i++) {
 
 
 						if (index !== index2) {
-
 
 					  if (srcIndex == srcIndex2) {
 					  	scorePoint = scorePoint + 1;
@@ -106,10 +123,18 @@ for (var i = 0; i < box.length; i++) {
 					  	}
 
 					  	quantityChecker++;
-					  	score.innerHTML = scorePoint;
+					  	// score.innerHTML = scorePoint;
 					  	audio.play();
 					  	box[indexArray[indexArray.length-1]].classList.add("winner");
 					  	box[indexArray[indexArray.length-2]].classList.add("winner");
+
+					  	tour_front[indexArray[indexArray.length-1]].classList.add("rotatewin");
+					  	tour_front[indexArray[indexArray.length-2]].classList.add("rotatewin");
+
+					  	tour_back[indexArray[indexArray.length-1]].classList.add("rotatewin");
+					  	tour_back[indexArray[indexArray.length-2]].classList.add("rotatewin");
+
+
 
 						boxImg[indexArray[indexArray.length-1]].classList.add("winner");
 						boxImg[indexArray[indexArray.length-2]].classList.add("winner");
@@ -181,13 +206,13 @@ setInterval(function(){
 
 var random = Math.floor(Math.random() * box.length /2)
 		
-	box[hintArray[random][0]].classList.add("hint");	
-	box[hintArray[random][1]].classList.add("hint");	
+	tour_front[hintArray[random][0]].classList.add("hint");	
+	tour_front[hintArray[random][1]].classList.add("hint");	
 
 	setTimeout(function(){
 
 		for (var i = 0; i < box.length; i++) {
-			box[i].classList.remove("hint")
+			tour_front[i].classList.remove("hint")
 		}
 	},500)
 	
@@ -203,7 +228,7 @@ again.addEventListener("click",function(){
 
 		time=0;
 		lastTime=0;
-		
+
 	audio3.pause()
 	audio3.currentTime = 0;
 	popup.classList.remove("show")
@@ -223,11 +248,45 @@ again.addEventListener("click",function(){
 		boxImg[i].classList.remove("winner");
 		box[i].classList.remove("winner");
 		boxImg[i].classList.remove("active");
-		
+
+		tour_back[i].classList.remove("rotate");
+		tour_back[i].classList.remove("rotatewin");
+		tour_front[i].classList.remove("rotate");
+		tour_front[i].classList.remove("rotatewin");
+
 
 	}
 
 })
+
+
+var hintTimer = 10;
+score.innerHTML = hintTimer;
+setInterval(function(){
+
+
+	if (hintTimer == 4) {
+		score.classList.add('green')
+	}
+	if (hintTimer == -1) {
+		score.classList.remove('green')
+	}
+
+	if (hintTimer == -1) {
+		hintTimer =10;
+	
+	}
+	score.innerHTML = hintTimer;
+
+	hintTimer--;
+
+
+},900)
+
+
+
+
+
 
 
 var bad_answer = document.getElementById("bad_answer");

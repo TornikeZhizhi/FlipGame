@@ -242,6 +242,6 @@ bad_answer.addEventListener("click",function(){
 
 var audio = new Audio( "music/wins.mp3" );
 var audio2 = new Audio( "music/fail.mp3");
-var audio3 = new Audio( "music/Congratulations.mp3");
+var audio3 = new Audio( "music/congratulations.mp3");
 
 

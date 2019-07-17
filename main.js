@@ -16,11 +16,28 @@ var liveScore = 0;
 for (var i = 0; i < box.length; i++) {
 	box[i].setAttribute("data-id",i)
 	boxImg[i].setAttribute("data-id",i)
+
 }
+
+function addPoint(){
+	for (var p = 0; p < box.length; p++) {
+	
+		box[p].classList.add("pointer");
+	}
+}
+
+function removePoint(){
+	for (var s = 0; s < box.length; s++) {
+	
+		box[s].classList.remove("pointer");
+	}
+}
+
 
 function removeFlip(){
 	for (var z = 0; z < box.length; z++) {
 		boxImg[z].classList.remove("active");
+		
 	}
 }
 
@@ -57,9 +74,13 @@ for (var i = 0; i < box.length; i++) {
 				x=1;
 			}else if (x == 1) {
 
-
+					addPoint()
 					boxImg[boxIndex].classList.add("active");
 					setTimeout(function(){
+
+						setTimeout(function(){
+							removePoint()
+						},200)
 
 
 						if (index !== index2) {
@@ -73,13 +94,16 @@ for (var i = 0; i < box.length; i++) {
 					  		popup.classList.add("show")
 					  		lastscore.innerHTML = Math.floor(scorePoint/lastTime * 57)
 
-					  		liveScore = Math.floor(scorePoint/lastTime * 57)
-
+					  		liveScore = Math.floor(scorePoint/lastTime * 15763)
+					  		lastscore.innerHTML = liveScore
 					  		if (liveScore > bestscorePoint) {
 
 					  			bestscorePoint = liveScore 
 					  			bestScore.innerHTML = bestscorePoint
 					  		}
+
+
+
 
 					  	}
 					  	quantityChecker++;
@@ -97,7 +121,7 @@ for (var i = 0; i < box.length; i++) {
 						  }
 
 						}	else {
-							console.log(x)
+						
 							x=1;
 						}
 
@@ -201,6 +225,16 @@ again.addEventListener("click",function(){
 	}
 
 })
+
+
+var bad_answer = document.getElementById("bad_answer");
+
+bad_answer.addEventListener("click",function(){
+
+	window.location.href = 'http://www.facebook.com';
+})
+
+
 
 
 

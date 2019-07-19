@@ -1,15 +1,15 @@
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 html {
-	height: 100%;
+  height: 100%;
 }
 body {
 background-color: antiquewhite;
-	height: 100%;
+  height: 100%;
 
 animation: bodyanime 4s linear infinite;
 }
@@ -132,15 +132,15 @@ margin: 0 auto;
 }
 
 #score {
-	transition: all .4s;
-	color: red;
-	    display: inline-block;
+  transition: all .4s;
+  color: red;
+      display: inline-block;
 }
 
 
 
 #score.green {
-	color: green !important;
+  color: green !important;
 
 }
 
@@ -158,7 +158,7 @@ margin: 0 auto;
 
 display: inline-block;
 
-padding: 20px;
+padding: 10px;
 
 font-family: 'Abril Fatface', cursive;
 
@@ -172,15 +172,15 @@ cursor: pointer;
 
 border-radius: 5px;
 
-width: 183px;
+width: 215px;
 } 
 .popup_content{
-  margin: 10% auto 0;
-    max-width: 600px;
-    text-align: center;
-    background: sandybrown;
-    padding: 10px 35px 10px;
-    border-radius: 65px 8px 35px 7px;
+  margin: 4% auto 0;
+  max-width: 761px;
+  text-align: center;
+  background: sandybrown;
+  padding: 10px 35px 10px;
+  border-radius: 65px 8px 35px 7px;
 }
 .question span:first-child{
   background-color: red;
@@ -332,7 +332,7 @@ font-family: 'Caveat', cursive;
     font-size: 23px;
     margin-bottom: 17px;
     padding: 0 45px;
-	
+  
 }
 
 
@@ -357,13 +357,13 @@ font-family: 'Caveat', cursive;
     margin-right: 10px;
 }
 .question span{
-	padding: 5px;
+  padding: 5px;
 }
-	
-	.popup_text h2 {
-		font-size: 30px;
-	}
-	.last_score {
+  
+  .popup_text h2 {
+    font-size: 30px;
+  }
+  .last_score {
   
     margin: 6px 0;
     font-size: 32px;
@@ -385,7 +385,7 @@ font-family: 'Caveat', cursive;
 
 
 .box {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 
@@ -412,8 +412,8 @@ font-family: 'Caveat', cursive;
     transition: all 0.5s; }
 
     .tour_front.hint {
-    	background-image: url('img/quest.png'), linear-gradient(#fbc055,#ffc760);
-    	animation: shake 0.4s; 
+      background-image: url('img/quest.png'), linear-gradient(#fbc055,#ffc760);
+      animation: shake 0.4s; 
     }
   .tour_back {
     position: absolute;
@@ -438,22 +438,22 @@ font-family: 'Caveat', cursive;
 
 
    .tour_front.rotate {
-   	  transform: rotateX(-180deg);
+      transform: rotateX(-180deg);
    }
 
    .tour_back.rotate {
-   	transform: rotateX(0deg);
+    transform: rotateX(0deg);
    }
 
 
     .tour_front.rotatewin {
-   	  transform: rotateX(-180deg) !important;
-   	  animation: unset !important;
+      transform: rotateX(-180deg) !important;
+      animation: unset !important;
    }
 
    .tour_back.rotatewin {
-   	transform: rotateX(0deg) !important;
-   	background: gray !important;
+    transform: rotateX(0deg) !important;
+    background: gray !important;
    }
 
 
